@@ -31,7 +31,7 @@ case_tuple = namedtuple(
 
 match_tuple = namedtuple(
     "match_tuple",(
-    "error", "warning", "file", "line", "message", "near"))
+    "error", "warning", "file", "line", "message", "near", "code", "quote"))
 
 
 _cases = []
@@ -47,6 +47,8 @@ _cases.append(case_tuple(
         line='33',
         message="""(vcom-1136) Unknown identifier "d_met".""",
         near="d_met",
+        code="vcom-1136",
+        quote='"',
     )]
 ))
 
@@ -62,6 +64,8 @@ _cases.append(case_tuple(
         line='56',
         message="""near "elsif": (vcom-1576) expecting ';'.""",
         near="elsif",
+        code=None,
+        quote='"',
     )]
 ))
 
@@ -77,6 +81,8 @@ _cases.append(case_tuple(
         line='58',
         message="(vcom-1441) ELSIF GENERATE STATEMENT is not defined for this version of the language.",
         near=None,
+        code=None,
+        quote=None,
     )]
 ))
 
@@ -92,6 +98,8 @@ _cases.append(case_tuple(
         line='47',
         message="""(vcom-1400) Synthesis Warning: Signal "sel" is read in the process but is not in the sensitivity list.""",
         near="sel",
+        code="vcom-1400",
+        quote='"',
     )]
 ))
 
@@ -106,7 +114,9 @@ _cases.append(case_tuple(
         file="sync.vhd",
         line='22',
         message="Synthesis Warning: Reset signal 'rst_n' is not in the sensitivity list of process 'line__22'.",
-        near=None,
+        near="rst_n",
+        code=None,
+        quote="'",
     )]
 ))
 
@@ -122,5 +132,7 @@ _cases.append(case_tuple(
         line='24',
         message='',
         near=None,
+        code=None,
+        quote=None,
     )]
 ))
